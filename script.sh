@@ -1,3 +1,3 @@
 #!/bin/sh
-echo 'my name is jenkins'
+echo 'my name is github
 
