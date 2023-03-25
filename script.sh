@@ -1,3 +1,3 @@
 #!/bin/sh
-echo 'my name is github'
+echo 'my name has changed to github'
 
