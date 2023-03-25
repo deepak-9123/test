@@ -1,2 +1,2 @@
 #!/bin/sh
-echo 'this is new world'
+echo 'this is new universe'
