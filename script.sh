@@ -1,3 +1,3 @@
 #!/bin/sh
-echo 'my name has changed to github'
+echo 'my name has changed to jenkins'
 
