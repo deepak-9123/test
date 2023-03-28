@@ -1,1 +1,73 @@
+pipeline {
+    agent any
 
+    stages {
+      stage('main Branch Deploy Code') {
+            when {
+                branch 'main'
+            }
+            steps {
+                sh """
+                echo "Building Artifact from main branch"
+                """
+ 
+                sh """
+                echo "Deploying Code from main branch"
+                """
+            }
+          }
+     stage('master Branch Deploy Code') {
+            when {
+                branch 'master'
+            }
+            steps {
+                sh """
+                echo "Building Artifact from master branch"
+                """
+                sh """
+                echo "Deploying Code from master branch"
+                """
+           }
+            }
+       stage('new Branch Deploy Code') {
+            when {
+                branch 'new'
+            }
+            steps {
+                sh """
+                echo "Building Artifact from new branch"
+                """
+ 
+                sh """
+                echo "Deploying Code from new branch"
+                """
+            }
+          }
+          stage('update Branch Deploy Code') {
+            when {
+                branch 'update'
+            }
+            steps {
+                sh """
+                echo "Building Artifact from update branch"
+                """
+ 
+                sh """
+                echo "Deploying Code from update branch"
+                """
+            }
+          }
+        stage('Test') {
+            steps {
+               echo 'Testing..'
+               echo 'checking for the working statu of this file'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                echo 'this is for file check'
+            }
+        }
+    }
+}
