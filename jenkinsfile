@@ -7,6 +7,8 @@ pipeline {
               echo 'Building..'
               echo 'making my first build '
               echo 'this is a multi branch job'
+              sh  'script.sh'
+              sh   'thefile.sh'
             }
         }
         stage('Test') {
