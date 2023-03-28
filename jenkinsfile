@@ -2,15 +2,34 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-              echo 'Building..'
-              echo 'making my first build '
-              echo 'this is a multi branch job'
-              sh  'script.sh'
-              sh   'thefile.sh'
+      stage('main Branch Deploy Code') {
+            when {
+                branch 'main'
             }
-        }
+            steps {
+                sh """
+                echo "Building Artifact from main branch"
+                """
+ 
+                sh """
+                echo "Deploying Code from main branch"
+                """
+            }
+          }
+     stage('master Branch Deploy Code') {
+            when {
+                branch 'master'
+            }
+            steps {
+                sh """
+                echo "Building Artifact from master branch"
+                """
+                sh """
+                echo "Deploying Code from master branch"
+                """
+           }
+            }
+       
         stage('Test') {
             steps {
                echo 'Testing..'
